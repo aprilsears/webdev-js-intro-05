@@ -1,6 +1,5 @@
 "use strict";
-
-const todos = [
+const todo = [
     "Wash the dishes",
     "Clean the gutters",
     "Mow the yard",
@@ -8,11 +7,9 @@ const todos = [
     "Rake the leaves",
 ];
 
-// Declare your two immutable variables
+let shiftValue;
+let popValue;
 
-
-// Declaring constant variables to store references to the elements
-// that will be updated by your code.
 const answerOneEl = document.getElementById("answer-one");
 const answerTwoEl = document.getElementById("answer-two");
 const answerThreeEl = document.getElementById("answer-three");
@@ -22,46 +19,51 @@ const answerSixEl = document.getElementById("answer-six");
 const submissionBtn = document.getElementById("submission-btn");
 
 function updateAnswerOne() {
-    
+    answerOneEl.textContent = todo.join(",");
 }
 
 function updateAnswerTwo() {
-
+    answerTwoEl.textContent = todo[2];
 }
 
 function removeLastValue() {
-
+    popValue = todo.pop();
 }
 
 function removeFirstValue() {
-
+    shiftValue = todo.shift();
 }
 
 function addShiftAndPopValues() {
-
+    todo.push(shiftValue, popValue);
 }
 
 function updateAnswerFour() {
-
+    answerFourEl.textContent = todo.join(",");
 }
 
 function reverseTodoList() {
-
+    todo.reverse();
 }
 
 function updateAnswerFive() {
-
+    answerFiveEl.textContent = todo.join(",");
 }
 
 function updateAnswerSix() {
-
+    answerSixEl.textContent = todo.join(",");
 }
 
 function render() {
-
+    updateAnswerOne();
+    updateAnswerTwo();
+    removeLastValue();
+    updateAnswerFour();
+    reverseTodoList();
+    updateAnswerFive();
+    removeFirstValue();
+    addShiftAndPopValues();
+    updateAnswerSix();
 }
 
-submissionBtn.addEventListener("click", function () {
-    // Update this function
-    render();
-});
+submissionBtn.addEventListener("click", render);
