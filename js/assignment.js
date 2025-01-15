@@ -1,5 +1,5 @@
 "use strict";
-const todo = [
+const todos = [
     "Wash the dishes",
     "Clean the gutters",
     "Mow the yard",
@@ -19,39 +19,39 @@ const answerSixEl = document.getElementById("answer-six");
 const submissionBtn = document.getElementById("submission-btn");
 
 function updateAnswerOne() {
-    answerOneEl.textContent = todo.join(",");
+    answerOneEl.textContent = todos.join(",");
 }
 
 function updateAnswerTwo() {
-    answerTwoEl.textContent = todo[2];
+    answerTwoEl.textContent = todos[2];
 }
 
 function removeLastValue() {
-    popValue = todo.pop();
+    popValue = todos.pop();
 }
 
 function removeFirstValue() {
-    shiftValue = todo.shift();
+    shiftValue = todos.shift();
 }
 
 function addShiftAndPopValues() {
-    todo.push(shiftValue, popValue);
+    todos.push(shiftValue, popValue);
 }
 
 function updateAnswerFour() {
-    answerFourEl.textContent = todo.join(",");
+    answerFourEl.textContent = todos.join(",");
 }
 
 function reverseTodoList() {
-    todo.reverse();
+    todos.reverse();
 }
 
 function updateAnswerFive() {
-    answerFiveEl.textContent = todo.join(",");
+    answerFiveEl.textContent = todos.join(",");
 }
 
 function updateAnswerSix() {
-    answerSixEl.textContent = todo.join(",");
+    answerSixEl.textContent = todos.join(",");
 }
 
 function render() {
